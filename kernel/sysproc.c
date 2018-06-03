@@ -91,10 +91,10 @@ sys_uptime(void)
 
 // return how many read system calls have been requested
 // since boot -Aaron.Zhang for P1b
-//int
-//sys_getreadcount(void)
-//{
-//  uint readCountNow = 0;
-//  readCountNow = readCount;
-//  return readCountNow;
-//}
+int
+sys_getreadcount(void)
+{
+  uint readCountNow = 0;
+  readCountNow = *readcount;
+  return readCountNow;
+}

@@ -17,7 +17,8 @@ USER_PROGS := \
 	usertests\
 	wc\
 	zombie\
-	hello
+	hello\
+	syscallreadtimes
 
 USER_PROGS := $(addprefix user/, $(USER_PROGS))
 

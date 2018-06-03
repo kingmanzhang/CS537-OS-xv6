@@ -12,7 +12,6 @@ struct gatedesc idt[256];
 extern uint vectors[];  // in vectors.S: array of 256 entry pointers
 struct spinlock tickslock;
 uint ticks;
-uint readCount; // record no. of system calls to read. Aaron.Zhang for P1b
 
 void
 tvinit(void)

@@ -9,6 +9,9 @@
 #include "fcntl.h"
 #include "sysfunc.h"
 
+static uint readcounter = 0; // used to track no. of calls to read
+uint *readcount = &readcounter; // global pointer to readcounter
+
 // Fetch the nth word-sized system call argument as a file descriptor
 // and return both the descriptor and the corresponding struct file.
 static int
@@ -61,7 +64,7 @@ sys_dup(void)
 int
 sys_read(void)
 {
-  //readCount++; //increment readCount whenever system call to read occurred
+  readcounter++; //increment readCount whenever system call to read occurred
   struct file *f;
   int n;
   char *p;
